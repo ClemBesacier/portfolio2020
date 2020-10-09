@@ -234,12 +234,18 @@ header {
         color: $greyDark;
         font-weight: 600;
         font-size: 12px;
+        transition: 0.3s ease;
         &:first-child {
             margin-right: 20px;
+        }
+        &:hover {
+            color: $yellow;
+            transition: 0.3s ease;
         }
     }
 }
 
+// SLIDER PROJETS
 .slider {
     padding-left: 100px;
     height: 100vh;
@@ -373,6 +379,72 @@ header {
     }
 }
 
+// PROJETS MOBILE
+.projetsMobile {
+    @media (min-width: 991px) {
+        display: none;
+    }
+    .item {
+        margin-bottom: 40px;
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .text {
+            padding: 20px 40px;
+            .categ {
+                font-weight: 400;
+                font-size: 12px;
+                text-transform: uppercase;
+                color: $greyDark;
+                letter-spacing: 1.5px;
+                margin-bottom: 10px;
+                padding-left: 3px;
+            }
+            .title {
+                color: $greyDark;
+                font-size: 30px;
+                font-weight: 600;
+                line-height: 30px;
+                margin-bottom: 20px;
+            }
+            a {
+                font-weight: 600;
+                font-size: 15px;
+                transition: 0.3s ease;
+                color: $greyMedium;
+                position: relative;
+                &::before {
+                    content: "";
+                    width: 35px;
+                    height: 35px;
+                    border: 1px solid $greyExtraLight;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: -8px;
+                    right: -50px;
+                }
+                &::after {
+                    content: "→";
+                    position: absolute;
+                    top: 2px;
+                    right: -40px;
+                    transition: 0.3s ease;
+                }
+                &:hover {
+                    color: $yellow;
+                    transition: 0.3s ease;
+                    &::after {
+                        right: -60px;
+                        color: $yellow;
+                        transition: 0.3s ease;
+                    }
+                }
+            }
+        }
+    }
+}
+
 .aboutMe {
     padding: 0 200px 0 100px;
     margin-bottom: 50px;
@@ -394,18 +466,16 @@ header {
             font-size: 14px;
             position: relative;
             padding-left: 25px;
-            @media (max-width: 991px) {
-                &::before {
-                    content: "";
-                    top: -10px;
-                }
-            }
+            
             &::before {
                 content: "←";
                 position: absolute;
                 left: 0;
                 top: -19px;
                 transition: 0.3s ease;
+                @media (max-width: 991px) {
+                    top: -10px;
+                }
             }
             &:hover {
                 &::before {
@@ -421,6 +491,9 @@ header {
 .mentions {
     padding: 30px 200px 0 100px;
     margin-bottom: 50px;
+    @media (max-width: 991px) {
+        padding: 0 40px;
+    }
     h2 {
         display: inline-block;
         margin-bottom: 0;
@@ -441,9 +514,15 @@ header {
 
 .project {
     padding-top: 50px;
+    @media (max-width: 991px) {
+        padding-top: 0;
+    }
     .backBtn {
         padding-left: 100px;
         margin-bottom: 50px;
+        @media (max-width: 991px) {
+            padding-left: 40px;
+        }
         a {
             color: $greyMedium;
             font-weight: 400;
@@ -470,12 +549,18 @@ header {
         display: flex;
         align-items: flex-end;
         margin-bottom: 50px;
+        @media (max-width: 991px){
+            padding: 0 40px;
+        }
         .number {
             -webkit-text-stroke: 1px $greyLight;
             color: white;
             font-size: 80px;
             line-height: 68px;
             margin-right: 15px;
+            @media (max-width: 991px){
+                display: none;
+            }
         }
         .title {
             h3 {
@@ -495,15 +580,29 @@ header {
                 max-width: 450px;
                 line-height: 45px;
                 margin: 0;
+                @media (max-width: 991px){
+                    font-size: 40px;
+                }
             }
         }
+    }
+    .mockup-fullScreen {
+        width: 100vw;
+        height: auto;
     }
     article {
         padding: 50px 200px;
         display: flex;
         justify-content: space-around;
+        @media (max-width: 991px){
+            padding: 50px 40px;
+            flex-direction: column;
+        }
         .left {
             max-width: 400px;
+            @media (max-width: 991px){
+                margin-bottom: 20px;
+            }
             h2 {
                 font-size: 35px;
                 font-weight: 600;
@@ -546,9 +645,14 @@ header {
             width: 1000px;
             height: auto;
             margin-bottom: 20px;
+            @media (max-width: 991px){
+                width: 100vw;
+            }
         }
     }
 }
+
+
 
 // FOOTER
 footer {
