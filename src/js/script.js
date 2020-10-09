@@ -5,6 +5,14 @@ import 'owl.carousel';
 
 
 $(document).ready(function () {
+
+    /* nav mobile */
+    $('.navMobile').click(function () {
+        $('.header').toggleClass('openMenu')
+        $(this).toggleClass('openMenu');
+    })
+
+
     $('.owl-homepage').owlCarousel({
         loop: true,
         margin: 10,
@@ -12,4 +20,6 @@ $(document).ready(function () {
         dots: true,
         items: 1
     });
+
+
 });
