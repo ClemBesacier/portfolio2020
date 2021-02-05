@@ -66,7 +66,7 @@ module.exports = {
             ]
         }),
         new CleanWebpackPlugin(),
-        ...['index', 'about', 'legal', 'megarama'].map(el => {
+        ...['index', 'about', 'legal', 'megarama', 'fitae', 'competition'].map(el => {
             return new HtmlWebpackPlugin({
                 filename: `${el}.html`,
                 template: `./src/${el}.html`,

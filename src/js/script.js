@@ -18,7 +18,10 @@ $(document).ready(function () {
         margin: 10,
         nav: false,
         dots: true,
-        items: 1
+        items: 1,
+        autoplay: true,
+        smartSpeed: 2000,
+        autoplayTimeout: 5000,
     });
 
 

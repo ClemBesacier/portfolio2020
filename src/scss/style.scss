@@ -294,37 +294,34 @@ header {
                 }
                 .title {
                     color: $greyDark;
-                    font-size: 80px;
+                    font-size: 60px;
                     font-weight: 600;
-                    line-height: 80px;
+                    line-height: 60px;
+                    max-width: 300px;
+                    margin-bottom: 40px;
                     @media (max-width: 1100px) {
                         font-size: 60px;
                         line-height: 60px;
                     }
                 }
                 a {
-                    position: absolute;
-                    bottom: 20px;
-                    left: 100px;
+                    position: relative;
                     font-weight: 600;
                     font-size: 20px;
                     transition: 0.3s ease;
                     color: $greyMedium;
-                    &::before {
-                        content: "";
+                    &::after {
+                        content: "→";
+                        position: absolute;
+                        top: -13px;
+                        right: -65px;
                         width: 50px;
                         height: 50px;
                         border: 1px solid $greyExtraLight;
                         border-radius: 50%;
-                        position: absolute;
-                        top: -15px;
-                        right: -80px;
-                    }
-                    &::after {
-                        content: "→";
-                        position: absolute;
-                        top: 0;
-                        right: -65px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
                         transition: 0.3s ease;
                     }
                     &:hover {
@@ -577,9 +574,10 @@ header {
             h1 {
                 color: $greyDark;
                 font-size: 50px;
-                max-width: 450px;
+                max-width: 460px;
                 line-height: 45px;
                 margin: 0;
+                font-weight: 700;
                 @media (max-width: 991px){
                     font-size: 40px;
                 }
@@ -587,13 +585,20 @@ header {
         }
     }
     .mockup-fullScreen {
-        width: 100vw;
-        height: auto;
-    }
-    article {
-        padding: 50px 200px;
+        width: 90%;
+        margin: 0 auto;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
+        height: auto;
+        &.last {
+            width: 100%;
+            margin-bottom: 0;
+        }
+    }
+    article.text {
+        padding: 50px 200px 0;
+        display: flex;
+        justify-content: space-between;
         @media (max-width: 991px){
             padding: 50px 40px;
             flex-direction: column;
@@ -615,6 +620,24 @@ header {
                 letter-spacing: 0.5px;
             }
         }
+        .colors {
+            display: flex;
+            align-items: center;
+            margin: 50px 0;
+            .orange {
+                width: 90px;
+                height: 90px;
+                border-radius: 10px;
+                background-color: #FF895A;
+                margin-right: 20px;
+            }
+            .blue {
+                width: 90px;
+                height: 90px;
+                border-radius: 10px;
+                background-color: #25C9D0;
+            }
+        }
         .right {
             .eachCateg {
                 margin-bottom: 20px;
@@ -632,10 +655,12 @@ header {
                     text-transform: uppercase;
                     letter-spacing: 1px;
                     margin: 0;
+                    max-width: 250px;
                 }
             }
         }
     }
+   
     .imgs {
         display: flex;
         flex-direction: column;
@@ -649,6 +674,41 @@ header {
                 width: 100vw;
             }
         }
+        .mobile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 90%;
+            margin-bottom: 50px;
+            img {
+                width: 310px;
+                border-radius: 50px;
+            }
+        }
+    }
+}
+
+.seeProject {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    .cta {
+        border: 2px solid #1F00FF;
+        padding: 5px 10px;
+        font-size: 14px;
+        font-weight: 700;
+        display: inline-block;
+        color: #1F00FF;
+        transform: translateY(0);
+        transition: 0.3s ease;
+        
+        &:hover {
+            transform: translateY(-3px);
+            transition: 0.3s ease;
+        }
+    }
+    .first {
+        margin-right: 20px;
     }
 }
 
